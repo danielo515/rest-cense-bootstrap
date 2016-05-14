@@ -1,8 +1,19 @@
+/**
+ * Generation of test data for the database.
+ * Insert city names in the array below to generate data for those cities.
+ * For higher number of test data records modify the numberOfRecords variable.
+ * Please keep the min age at 1, because it's the only min age wich makes sense.
+ */
 var cities = ["Madrid", "Toledo", "Barcelona", "Gijón", "Valencia", "Puertollano"];
 var timestamp = new Date('01/01/2016').getTime(),
     minAge = 1, maxAge = 150,
     numberOfRecords = 200;
 
+/**
+ * Generates a number between one and max.
+ * Use it for positive numbers
+ * @return {Number} random number
+ */
 function rand(max) {
     return Math.floor((Math.random() * max) + 1);
 }
@@ -22,6 +33,7 @@ function generatePopulation() {
 
 var data = [];
 
+// We connect to the default mongo database
 var conn = new Mongo(),
 db = conn.getDB("cense");
 
