@@ -15,16 +15,16 @@ This scripts are all that you need to get the application up and running.
 For starting from scratch and bootstraping everything execute the script `bootstrap.sh` .
 This is the sequence the script will follow:
 
-1. It will generate the required MongoDB docker image
+1. It will generate the required MongoDB docker image. This step also populates the database with some test data (please check [Test data](#Test data) )
 1. It will generate the required application docker image
-1. Starts the database in a mongo container. This step also populates the database with some test data (please check [Test data](#test-data) )
+1. Starts the database in a mongo container.
 1. Spawns two application instances in two docker containers linked with the mongodb container
 
 ## Start an application instance
 
 Once you have a MongoDB container running execute `app_spawn.sh` 
 to spawn a new instance of the application linked with the mongo container. 
-It is a good idea to provide a port number to the script in the first execution. 
+It is a **good idea** to provide a port number to the script in the first execution. 
 Consecutive executions without port number will use consecutive port numbers, so:
 
 ```shell
