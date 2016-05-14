@@ -1,4 +1,4 @@
 #!/bin/bash
+# Builds the application docker image
 
-cd ..
-docker build -t danielo515/cense .
+docker build -t danielo515/cense -f ./app.docker .

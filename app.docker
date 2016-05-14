@@ -1,0 +1,17 @@
+FROM node
+MAINTAINER Daniel Rodriguez Rivero 
+
+RUN mkdir -p /var/www \
+    && cd /var/www \
+    git clone https://github.com/danielo515/mongodb-rest-cense
+
+WORKDIR /var/www/mongodb-rest-cense
+
+RUN npm install  
+
+#Expose the port
+EXPOSE 3000
+  
+ENV VCAP_APP_HOST="0.0.0.0"
+  
+CMD ["npm", "start"]
